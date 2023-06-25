@@ -39,7 +39,7 @@ Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados:
 3. Instale o Flask e pymongo utilizando o pip:
    ```
    pip install Flask pymongo
-   ``
+   ```
 
 5. Execute o aplicativo:
    ```
