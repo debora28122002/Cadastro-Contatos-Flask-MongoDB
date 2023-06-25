@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset='utf-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link rel="stylesheet" href="../style/bootstrap.min.css">
+      <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
+      <title>Contatos</title>
+  </head>
+  <body>
+    <h5 class="title" id="titleContato">Contatos</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for contato in contatos %}
+          <tr>
+            <td>
+              {{ contato.nome }}
+            </td>
+            <td>
+              {{ contato.sobrenome }}
+            </td>
+            <td>
+              {{ contato.telefone }}
+            </td>
+            <td>
+              {{ contato.email }}
+            </td>
+            <td>
+              <a href="editarContato/{{ contato._id }}">Editar/ </a>
+              <a href="#" onclick="excluir('{{ contato._id }}')">Excluir</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="button">
+      <a href="criarContato"><button type="button" class="btn btn-success">Adicionar <br> Novo Contato</button></a>
+    </div>
+    <script>
+      function excluir(id) {
+        var resposta = confirm("Tem certeza de que deseja excluir esse contato?");
+        if (resposta) {
+          window.location.href = 'excluirContato/' + id;
+        } 
+      }
+    </script>
+  </body>
+</html>
+  

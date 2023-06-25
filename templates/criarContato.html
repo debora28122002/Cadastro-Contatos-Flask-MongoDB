@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Criar Contato</title>
+ </head>
+ <body>
+    <img src="{{ url_for('static', filename='img/voltar.png') }}" onclick="voltar()">
+    <h5 class="title">Novo Contato</h5>
+    <form method="POST" action="/criarContato">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" name="nome" required>
+        </div>
+        <div class="form-group">
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" class="form-control" name="sobrenome" required>
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" class="form-control" name="telefone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
+        <div class="button">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+      <script>
+        function voltar(){
+            history.back();
+        }
+      </script>
+ </body>
+ </html>
